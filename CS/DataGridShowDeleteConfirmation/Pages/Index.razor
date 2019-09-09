@@ -11,7 +11,7 @@
 }
 else
 {
-<DxDataGrid Data=@forecasts CssClass="MainGrid" AllowDataRowSelection="false" ShowPager="false" ShowFilterRow=false>
+<DxDataGrid Data=@forecasts CssClass="MainGrid" SelectionMode="@DataGridSelectionMode.None" ShowPager="false" ShowFilterRow=false>
     <DxDataGridColumn Field=@nameof(WeatherForecast.ID) Width="150px" Caption="#">
         <DisplayTemplate>
             @{
