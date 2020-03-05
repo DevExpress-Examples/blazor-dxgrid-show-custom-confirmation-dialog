@@ -11,7 +11,7 @@
 }
 else
 {
-<DxDataGrid Data=@forecasts CssClass="MainGrid" SelectionMode="@DataGridSelectionMode.None" ShowPager="false" ShowFilterRow=false>
+<DxDataGrid @ref="@Grid" Data=@forecasts CssClass="MainGrid" SelectionMode="@DataGridSelectionMode.None" ShowPager="false" ShowFilterRow=false>
     <DxDataGridColumn Field=@nameof(WeatherForecast.ID) Width="150px" Caption="#">
         <DisplayTemplate>
             @{
@@ -35,6 +35,7 @@ else
 
 @functions {
     List<WeatherForecast> forecasts;
+    DxDataGrid<WeatherForecast> Grid;
     protected override async Task OnInitializedAsync()
     {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
@@ -46,7 +47,7 @@ else
         if (isConfirmed)
         {
             forecasts.Remove(forecasts.Find(m => m.ID == id));
-            StateHasChanged();
+            await Grid.Refresh();
         }
     }
 }
