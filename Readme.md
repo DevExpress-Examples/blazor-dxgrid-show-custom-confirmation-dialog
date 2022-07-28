@@ -29,4 +29,4 @@ This example demonstrates how to do the following:
 
 ## More Examples
 
-- [Grid for Blazor - How to edit a row on a separate page](xref:https://supportcenter.devexpress.com/ticket/details/t802173/grid-for-blazor-how-to-edit-a-row-on-a-separate-page)
+- [Grid for Blazor - How to edit a row on a separate page](https://supportcenter.devexpress.com/ticket/details/t802173/grid-for-blazor-how-to-edit-a-row-on-a-separate-page)
