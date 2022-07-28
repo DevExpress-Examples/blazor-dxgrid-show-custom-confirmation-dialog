@@ -9,8 +9,8 @@
 else {
     <DxGrid Data="@forecasts" CssClass="mw-1100" @ref="myGrid" RowClick="OnRowClick">
         <Columns>
-            <DxGridDataColumn Caption="Date" FieldName="Date" />
-            <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF" />
+            <DxGridDataColumn Caption="Date" FieldName="Date"/>
+            <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF"/>
             <DxGridDataColumn Name="Delete" Caption="Edit">
             <CellDisplayTemplate>
                 <DxButton RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained" Text="Delete" Click="@OnDeleteButtonClick"/>
@@ -19,12 +19,12 @@ else {
         </Columns>
     </DxGrid>
     <DxPopup @bind-Visible="@popupVisible" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
-         You are about to delete this record. Are you sure?
-         <div class="dxbs-grid-confirm-dialog-buttons">
-             <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Success" Click="@OnCancelButtonClick"/>
-             <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick" />                 
-         </div>
-    </DxPopup>   
+        You are about to delete this record. Are you sure?
+        <div class="dxbs-grid-confirm-dialog-buttons">
+            <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Success" Click="@OnCancelButtonClick"/>
+            <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick" />
+        </div>
+    </DxPopup>
 }
 
 @code {
