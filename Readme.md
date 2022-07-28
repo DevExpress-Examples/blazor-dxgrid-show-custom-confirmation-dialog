@@ -13,7 +13,7 @@ The example uses the [DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Bla
 This example demonstrates how to do the following:
 
 - Create a custom confirmation dialog with the **Confirm** and **Cancel** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
-- Add the custom **Delete** [button](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton) to a [DxGrid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) column.
+- Add a custom **Delete** button to a [DxGrid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) column.
 - Display the confirmation dialog on the **Delete** button [click](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click).
 - Delete the record in the bound data source when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Confirm** button.
 
