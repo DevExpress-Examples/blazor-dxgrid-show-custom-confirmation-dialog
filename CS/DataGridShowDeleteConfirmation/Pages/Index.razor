@@ -7,22 +7,22 @@
     <p><em>Loading...</em></p>
 }
 else {
-    <DxGrid Data="@forecasts" CssClass="mw-1100" @ref="myGrid" RowClick="OnRowClick">
+    <DxGrid Data="@forecasts" CssClass="mw-1100" @ref="myGrid">
         <Columns>
+            <DxGridCommandColumn Width="70px" NewButtonVisible="false">
+                <CellDisplayTemplate Context="myContext">
+                    <DxButton Text="Delete" RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained"  Click="@((e) => OnDeleteButtonClick(e, myContext))" />
+                </CellDisplayTemplate>
+            </DxGridCommandColumn>
             <DxGridDataColumn Caption="Date" FieldName="Date"/>
             <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF"/>
-            <DxGridDataColumn Name="Delete" Caption="Edit">
-            <CellDisplayTemplate>
-                <DxButton RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained" Text="Delete" Click="@OnDeleteButtonClick"/>
-            </CellDisplayTemplate>
-        </DxGridDataColumn>
         </Columns>
     </DxGrid>
     <DxPopup @bind-Visible="@popupVisible" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
-        You are about to delete this record. Are you sure?
+        You are about to delete the record with the id = @dataSourceIndex. Are you sure?
         <div class="dxbs-grid-confirm-dialog-buttons">
             <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Success" Click="@OnCancelButtonClick"/>
-            <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick" />
+            <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick"/>
         </div>
     </DxPopup>
 }
@@ -30,7 +30,7 @@ else {
 @code {
     bool popupVisible { get; set; } = false;
     IGrid myGrid { get; set; }
-    Int32 rowIndex { get; set; }
+    Int32 dataSourceIndex { get; set; }
 
     private WeatherForecast[] forecasts;
 
@@ -38,19 +38,14 @@ else {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 
-    void OnRowClick(GridRowClickEventArgs e) {
-        if (e.Column.Name == "Delete")
-            rowIndex = e.VisibleIndex;
-    }
-
-    void OnDeleteButtonClick(MouseEventArgs args) {
+    void OnDeleteButtonClick(MouseEventArgs args, GridCommandColumnCellDisplayTemplateContext context) {
+        WeatherForecast itemToDelete = myGrid.GetDataItem(context.VisibleIndex) as WeatherForecast;
+        dataSourceIndex = Array.IndexOf(forecasts, itemToDelete);
         popupVisible = true;
     }
 
     void OnConfirmButtonClick(MouseEventArgs args) {
-        WeatherForecast itemToDelete = myGrid.GetDataItem(rowIndex) as WeatherForecast;
-        int dataSourceIndex = Array.IndexOf(forecasts, itemToDelete);
-        forecasts = forecasts.Where((value, index) => index != dataSourceIndex).ToArray();
+        forecasts = forecasts.Where((value, dataIndex) => dataIndex != dataSourceIndex).ToArray();
         myGrid.Reload();
         popupVisible = false;
     }
