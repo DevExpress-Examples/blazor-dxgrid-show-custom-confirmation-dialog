@@ -9,10 +9,6 @@ html, body {
     overflow: hidden;
 }
 
-#app {
-    background-color: inherit;
-}
-
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }
