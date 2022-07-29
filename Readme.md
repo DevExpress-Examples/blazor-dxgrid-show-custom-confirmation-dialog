@@ -6,7 +6,8 @@
 
 # Grid for Blazor - How to display a custom confirmation dialog 
 
-The example uses the [DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup) to create a custom confirmation dialog that asks user to approve record deleting.
+The example uses the [DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup) to create a custom confirmation dialog that asks a user to approve record deletion.
+
 
 ![Display a custom confirmation dialog before deleting a grid record](application-page.png)
 
