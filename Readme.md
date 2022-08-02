@@ -3,15 +3,32 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T802166)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Index.razor](./CS/DataGridShowDeleteConfirmation/Pages/Index.razor)
-* [_Host.cshtml](./CS/DataGridShowDeleteConfirmation/Pages/_Host.cshtml)
-<!-- default file list end -->
+# Grid for Blazor - How to display a custom confirmation dialog 
 
-### Blazor Data Grid - How to implement the delete confirmation feature
+The example uses the [DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup) to create a custom confirmation dialog that asks a user to approve record deletion.
 
-The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
 
-This example illustrates how to implement the confirmation dialog before deleting a record.
+![Display a custom confirmation dialog before deleting a grid record](application-page.png)
+
+This example demonstrates how to do the following:
+
+- Create a custom confirmation dialog with the **Confirm** and **Cancel** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
+- Add a custom **Delete** button to a [DxGrid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) column.
+- Display the confirmation dialog when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Delete** button.
+
+- Delete the record in the bound data source when a user clicks the **Confirm** button.
+
+## Files to Look At
+
+- [Index.razor](./CS/DataGridShowDeleteConfirmation/Pages/Index.razor)
+
+## Documentation
+
+- [Grid: Data Binding](https://docs.devexpress.com/Blazor/403737/grid/bind-to-data)
+- [Grid: Edit Data and Validate Input](https://docs.devexpress.com/Blazor/403454/grid/edit-data-and-validate-input)
+- [Show and Close a Popup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup#show-and-close-a-popup)
+
+## More Examples
+
+- [Grid for Blazor - How to edit a row on a separate page](https://supportcenter.devexpress.com/ticket/details/t802173/grid-for-blazor-how-to-edit-a-row-on-a-separate-page)

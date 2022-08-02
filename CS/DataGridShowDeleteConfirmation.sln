@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.32002.185
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridShowDeleteConfirmation", "DataGridShowDeleteConfirmation\DataGridShowDeleteConfirmation.csproj", "{3076ACE0-79DB-4808-9F68-A2C53FF70E09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridShowDeleteConfirmation", "DataGridShowDeleteConfirmation\DataGridShowDeleteConfirmation.csproj", "{FAB04897-62F0-4177-AE14-021B183E75CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3076ACE0-79DB-4808-9F68-A2C53FF70E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3076ACE0-79DB-4808-9F68-A2C53FF70E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3076ACE0-79DB-4808-9F68-A2C53FF70E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3076ACE0-79DB-4808-9F68-A2C53FF70E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB04897-62F0-4177-AE14-021B183E75CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB04897-62F0-4177-AE14-021B183E75CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB04897-62F0-4177-AE14-021B183E75CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB04897-62F0-4177-AE14-021B183E75CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {96A44C98-151E-4780-9EA8-93369885E81A}
+		SolutionGuid = {210F4D33-D17D-4303-A6B8-D436F69EAC68}
 	EndGlobalSection
 EndGlobal
