@@ -4,22 +4,20 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Grid for Blazor - How to display a custom confirmation dialog 
+# Grid for Blazor - Create a custom record deletion confirmation dialog
 
-The example uses the [DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup) to create a custom confirmation dialog that asks a user to approve record deletion.
-
+The example uses the DevExpress Blazor Popup control ([DxPopup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup)) alongside our Blazor Grid (to create a custom confirmation dialog).
 
 ![Display a custom confirmation dialog before deleting a grid record](application-page.png)
 
-This example demonstrates how to do the following:
+The project illustrates how you can incorporate the following capabilities into your Blazor-powered web application:
 
 - Create a custom confirmation dialog with the **Confirm** and **Cancel** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
-- Add a custom **Delete** button to a [DxGrid](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid) column.
-- Display the confirmation dialog when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Delete** button.
+- Add a custom **Delete** button to a Blazor Grid column.
+- Display a confirmation dialog when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Delete** button.
+- Delete the record when a user clicks the **Confirm** button.
 
-- Delete the record in the bound data source when a user clicks the **Confirm** button.
-
-## Files to Look At
+## Files to Review
 
 - [Index.razor](./CS/DataGridShowDeleteConfirmation/Pages/Index.razor)
 
