@@ -23,7 +23,7 @@ else {
     </DxGrid>
     <DxPopup @bind-Visible="@popupVisible" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
         You are about to delete the record with the id = @id. Are you sure?
-        <div class="dxbs-grid-confirm-dialog-buttons">
+        <div class="dxbl-grid-confirm-dialog-buttons">
             <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Success" Click="@OnCancelButtonClick"/>
             <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick" />
         </div>
