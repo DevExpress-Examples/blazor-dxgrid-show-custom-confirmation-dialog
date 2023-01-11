@@ -1,4 +1,4 @@
-﻿@page "/"
+@page "/"
 
 @using DataGridShowDeleteConfirmation.Data
 @inject WeatherForecastService ForecastService
@@ -11,10 +11,7 @@ else {
         <Columns>
             <DxGridCommandColumn Width="70px" NewButtonVisible="false">
                 <CellDisplayTemplate Context="myContext">
-                    @{
-                        int id = (myContext.DataItem as WeatherForecast).ID;
-                        <DxButton RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained" Text="Delete" Click="@((e) => OnDeleteButtonClick(e, myContext))" />
-                    }
+                    <DxButton RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained" Text="Delete" Click="@(() => OnDeleteButtonClick(myContext))" />
                 </CellDisplayTemplate>
             </DxGridCommandColumn>
             <DxGridDataColumn Caption="Date" FieldName="Date" />
@@ -41,18 +38,18 @@ else {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     }
 
-    void OnDeleteButtonClick(MouseEventArgs args, GridCommandColumnCellDisplayTemplateContext context) {
+    void OnDeleteButtonClick(GridCommandColumnCellDisplayTemplateContext context) {
         id = (context.DataItem as WeatherForecast).ID;
         popupVisible = true;
     }
 
-    void OnConfirmButtonClick(MouseEventArgs args) {
+    void OnConfirmButtonClick() {
         forecasts.Remove(forecasts.Find(m => m.ID == id));
         myGrid.Reload();
         popupVisible = false;
     }
 
-    void OnCancelButtonClick(MouseEventArgs args) {
+    void OnCancelButtonClick() {
         popupVisible = false;
     }
 }
