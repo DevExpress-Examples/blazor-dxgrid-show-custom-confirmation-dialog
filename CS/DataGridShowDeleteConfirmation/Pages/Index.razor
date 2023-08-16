@@ -19,11 +19,13 @@ else {
         </Columns>
     </DxGrid>
     <DxPopup @bind-Visible="@popupVisible" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
-        You are about to delete the record with the id = @id. Are you sure?
-        <div class="dxbl-grid-confirm-dialog-buttons">
-            <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Success" Click="@OnCancelButtonClick"/>
-            <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Danger" Click="@OnConfirmButtonClick" />
-        </div>
+        <BodyContentTemplate>
+            <p>You are about to delete the record with the id = @id. Are you sure?</p>
+            <div class="confirm-dialog-buttons">
+                <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Success" Click="@OnConfirmButtonClick" />
+                <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Danger" Click="@OnCancelButtonClick" />
+            </div>
+        </BodyContentTemplate>
     </DxPopup>
 }
 
@@ -53,3 +55,17 @@ else {
         popupVisible = false;
     }
 }
+
+<style>
+    .confirm-dialog-buttons {
+        display: flex;
+    }
+
+    .confirm-dialog-buttons .dxbl-btn:nth-of-type(1) {
+        margin-left: auto;
+    }
+
+    .confirm-dialog-buttons .dxbl-btn:nth-of-type(2) {
+        margin-left: 0.5rem;
+    }
+</style>
