@@ -18,7 +18,7 @@ else {
             <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF"/>
         </Columns>
     </DxGrid>
-    <DxPopup @bind-Visible="@popupVisible" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
+    <DxPopup @bind-Visible="@ConfirmationShown" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
         <BodyContentTemplate>
             <p>You are about to delete the record with the id = @id. Are you sure?</p>
             <div class="confirm-dialog-buttons">
@@ -30,7 +30,7 @@ else {
 }
 
 @code {
-    bool popupVisible { get; set; } = false;
+    bool ConfirmationShown { get; set; } = false;
     IGrid myGrid { get; set; }
     Int32 id { get; set; }
 
@@ -42,17 +42,17 @@ else {
 
     void OnDeleteButtonClick(GridCommandColumnCellDisplayTemplateContext context) {
         id = (context.DataItem as WeatherForecast).ID;
-        popupVisible = true;
+        ConfirmationShown = true;
     }
 
     void OnConfirmButtonClick() {
         forecasts.Remove(forecasts.Find(m => m.ID == id));
         myGrid.Reload();
-        popupVisible = false;
+        ConfirmationShown = false;
     }
 
     void OnCancelButtonClick() {
-        popupVisible = false;
+        ConfirmationShown = false;
     }
 }
 
