@@ -22,8 +22,8 @@ else {
         <BodyContentTemplate>
             <p>You are about to delete the record with the id = @id. Are you sure?</p>
             <div class="confirm-dialog-buttons">
-                <DxButton Text="Yes" RenderStyle="ButtonRenderStyle.Primary" Click="@OnConfirmButtonClick" />
-                <DxButton Text="No" RenderStyle="ButtonRenderStyle.Secondary" Click="@OnCancelButtonClick" />
+                <DxButton Text="Yes" RenderStyle="ButtonRenderStyle.Primary" Click="@OnYesButtonClick" />
+                <DxButton Text="No" RenderStyle="ButtonRenderStyle.Secondary" Click="@OnNoButtonClick" />
             </div>
         </BodyContentTemplate>
     </DxPopup>
@@ -45,13 +45,13 @@ else {
         ConfirmationShown = true;
     }
 
-    void OnConfirmButtonClick() {
+    void OnYesButtonClick() {
         forecasts.Remove(forecasts.Find(m => m.ID == id));
         myGrid.Reload();
         ConfirmationShown = false;
     }
 
-    void OnCancelButtonClick() {
+    void OnNoButtonClick() {
         ConfirmationShown = false;
     }
 }
