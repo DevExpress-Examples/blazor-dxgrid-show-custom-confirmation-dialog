@@ -18,12 +18,12 @@ else {
             <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF"/>
         </Columns>
     </DxGrid>
-    <DxPopup @bind-Visible="@ConfirmationShown" HeaderText="Please confirm" Width="auto" CloseOnOutsideClick="false">
+    <DxPopup @bind-Visible="@ConfirmationShown" HeaderText="Delete a record" Width="auto" CloseOnOutsideClick="false">
         <BodyContentTemplate>
             <p>You are about to delete the record with the id = @id. Are you sure?</p>
             <div class="confirm-dialog-buttons">
-                <DxButton Text="Confirm" RenderStyle="ButtonRenderStyle.Success" Click="@OnConfirmButtonClick" />
-                <DxButton Text="Cancel " RenderStyle="ButtonRenderStyle.Danger" Click="@OnCancelButtonClick" />
+                <DxButton Text="Yes" RenderStyle="ButtonRenderStyle.Primary" Click="@OnConfirmButtonClick" />
+                <DxButton Text="No" RenderStyle="ButtonRenderStyle.Secondary" Click="@OnCancelButtonClick" />
             </div>
         </BodyContentTemplate>
     </DxPopup>

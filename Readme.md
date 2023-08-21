@@ -12,10 +12,10 @@ The example uses the DevExpress Blazor Popup control ([DxPopup](https://docs.dev
 
 The project illustrates how you can incorporate the following capabilities into your Blazor-powered web application:
 
-- Create a custom confirmation dialog with the **Confirm** and **Cancel** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
+- Create a custom confirmation dialog with the **Yes** and **No** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
 - Add a custom **Delete** button to a Blazor Grid column.
 - Display a confirmation dialog when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Delete** button.
-- Delete the record when a user clicks the **Confirm** button.
+- Delete the record when a user clicks the **Yes** button.
 
 ## Files to Review
 
