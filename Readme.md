@@ -14,9 +14,49 @@ The example uses the DevExpress Blazor Popup control ([DxPopup](https://docs.dev
 The project illustrates how you can incorporate the following capabilities into your Blazor-powered web application:
 
 - Create a custom confirmation dialog with the **Yes** and **No** [buttons](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton).
+
+    ```html
+    <DxPopup @bind-Visible="@ConfirmationShown" HeaderText="Delete a record" Width="auto" CloseOnOutsideClick="false">
+        <BodyContentTemplate>
+            <p>You are about to delete the record with the id = @id. Are you sure?</p>
+            <div class="confirm-dialog-buttons">
+                <DxButton Text="Yes" RenderStyle="ButtonRenderStyle.Primary" Click="@OnYesButtonClick" />
+                <DxButton Text="No" RenderStyle="ButtonRenderStyle.Secondary" Click="@OnNoButtonClick" />
+            </div>
+        </BodyContentTemplate>
+    </DxPopup>
+    ```
 - Add a custom **Delete** button to a Blazor Grid column.
+
+    ```html
+    <DxGridCommandColumn Width="70px" NewButtonVisible="false">
+        <CellDisplayTemplate Context="myContext">
+            <DxButton RenderStyle="ButtonRenderStyle.Link" RenderStyleMode="ButtonRenderStyleMode.Contained" Text="Delete" Click="@(() => OnDeleteButtonClick(myContext))" />
+        </CellDisplayTemplate>
+    </DxGridCommandColumn>
+    ```
 - Display a confirmation dialog when a user [clicks](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxButton.Click) the **Delete** button.
+
+    ```cs
+    bool ConfirmationShown { get; set; } = false;
+
+    void OnDeleteButtonClick(GridCommandColumnCellDisplayTemplateContext context) {
+        id = (context.DataItem as WeatherForecast).ID;
+        ConfirmationShown = true;
+    }
+    ```
 - Delete the record when a user clicks the **Yes** button.
+
+    ```
+    void OnYesButtonClick() {
+        forecasts.Remove(forecasts.Find(m => m.ID == id));
+        myGrid.Reload();
+        ConfirmationShown = false;
+    }
+    void OnNoButtonClick() {
+        ConfirmationShown = false;
+    }
+    ```
 
 ## Files to Review
 
@@ -27,6 +67,7 @@ The project illustrates how you can incorporate the following capabilities into 
 - [Grid: Data Binding](https://docs.devexpress.com/Blazor/403737/grid/bind-to-data)
 - [Grid: Edit Data and Validate Input](https://docs.devexpress.com/Blazor/403454/grid/edit-data-and-validate-input)
 - [Show and Close a Popup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPopup#show-and-close-a-popup)
+- [Confirmation Dialog Based on DevExpress Blazor Message Box](https://docs.devexpress.com/Blazor/404497/components/dialogs-and-windows/confirmation-dialog)
 
 ## More Examples
 
